@@ -1,6 +1,6 @@
 #LISTS
 
-#to print specific list
+#to print specific item in a list
 alphabets = ['a','b','c','d','e'] 
 print(alphabets[0])
 
