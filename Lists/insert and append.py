@@ -1,5 +1,5 @@
 guests=['mom','dad','brother','sister']
-not_make_it=guests.pop(1)
+not_make_it=guests.pop(1) # deletes dad and stores in the not_nake_it
 guests.insert(1,'anoodit')
 print("those who would be invited are:"+','.join(guests)) 
 
@@ -10,8 +10,8 @@ for p in range(4):
 guests=['mom','dad','brother','sister']
 print("Hello everyone, I found a bigger dinner table so i would like to invite more people besides: "+",".join(guests))
 guests.insert(0,"anoodit")
-guests.insert(3,"roshni")
-guests.append("anushka")
+guests.insert(3,"roshni")#adds element to the list 
+guests.append("anushka") #adds anushka to end of the list 
 
 for i in guests:
     print("Hello, "+i+" you are invited to dinner tomorrow.")
