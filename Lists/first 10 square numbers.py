@@ -10,7 +10,6 @@ squares= [value**2 for value in range(1,11)]
 print(squares)
 
 print(number) # it prints the first 10 square numbers
-
 #simple statistics in python
 digits=[1,2,3,4,5,6,7,8,9,10]
 print(min(digits)) 
