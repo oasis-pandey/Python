@@ -10,3 +10,7 @@ for i in range(1,11):
     x=i**3
     cubes.append(x)
 print(cubes)
+
+'''
+LIST COMPREHENSION REMAINING"
+'''
