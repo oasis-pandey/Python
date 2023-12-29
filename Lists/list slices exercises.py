@@ -15,7 +15,9 @@ the last three items in the list.
 alphabets=['a','b','c','d','e','f','g','h','i']
 print("the first three items in the list are: ")
 print(str(alphabets[:3])+"\n")
+
 print("the 3 middle items are: ")
 print(str(alphabets[3:6])+ "\n")
+
 print("the last 3 items are: ")
 print(str(alphabets[6:])+"\n")
