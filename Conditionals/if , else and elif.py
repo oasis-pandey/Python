@@ -32,3 +32,10 @@
 # else:
 #     print("enter a valid age")
 
+# favourite_foods=['momo','pizza','chowmean','chicken','buff']
+# if 'momo' in favourite_foods:
+#     print("you really like momos")
+# if 'pizza' in favourite_foods:
+#     print("you really like pizza")
+# if 'chowmean' in favourite_foods:
+#     print("you really like chowmean")
