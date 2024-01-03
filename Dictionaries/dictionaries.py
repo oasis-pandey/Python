@@ -6,3 +6,8 @@ print(aliens.keys())
 print(aliens.values())
 print(aliens.items())
 print(aliens)
+print(aliens['X dimension'])
+
+
+aliens['color']='yellow'
+print(f"the color of the alien is now {aliens['color']}")
