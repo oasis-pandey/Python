@@ -10,3 +10,6 @@ for name in sorted(favorite_languages.keys()):
 
 for name in favorite_languages.keys():
     print(name)
+
+for language in set(favorite_languages.values()):
+    print(language.title())
