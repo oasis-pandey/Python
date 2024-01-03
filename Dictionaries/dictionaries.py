@@ -51,12 +51,31 @@
 # ITEMS , VALUES AND KEYS 
 # ITEMS MEANS BOTH, VALUES MEANS ONLY RIGHT SIDE , KEYS MEANS LEFT SIDE
 
-glossary={
-    'a':'apple',
-    'b':'ball',
-    'c':'cat',
-    'd':'dog'
+# glossary={
+#     'a':'apple',
+#     'b':'ball',
+#     'c':'cat',
+#     'd':'dog'
 
-}
-for keys, meanings in glossary.items():
-    print(keys+ ":"+ meanings+"\n")
+# }
+# for keys, meanings in glossary.items():
+#     print(keys+ ":"+ meanings+"\n")
+
+# favorite_languages = {
+#  'jen': 'python',
+#  'sarah': 'c',
+#  'edward': 'ruby',
+#  'phil': 'python',
+#  }
+
+# friends = ['phil', 'sarah']
+
+# for names in favorite_languages.keys():
+#     print(names.title())
+
+# for name in friends:
+#     if name in favorite_languages:
+#         print("Hello, "+name+" Glad to hear that your favorite language is "+favorite_languages[name].title()+"!")
+
+    
+
