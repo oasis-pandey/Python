@@ -13,3 +13,4 @@ for poll in polls:
         if poll not in favorite_languages.keys():
             print("Hey "+poll.title()+", You are invited to poll.")
 
+# it is a simple method for nesting loops
