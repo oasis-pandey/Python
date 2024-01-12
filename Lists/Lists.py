@@ -4,7 +4,6 @@
 alphabets = ['a','b','c','d','e'] 
 print(alphabets[0])
 
-
 # to add in a list
 alphabets.insert(5,'f')
 print(alphabets)
