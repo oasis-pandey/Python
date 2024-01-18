@@ -9,7 +9,7 @@ elements=['rock','paper','scissors']
 
 while True:
     user_pick=input("Please pick rock, papers or scissors or Q to quit: ")
-    computer_pick= elements[random.randint(0,2)]
+    computer_pick= elements[random.randrange(0,3)]# generates random number from 0 to 2
     if user_pick.lower()=='q':
         quit()
     
