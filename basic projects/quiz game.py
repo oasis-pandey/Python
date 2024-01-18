@@ -3,7 +3,7 @@ def quiz_game():
     print("Welcome to my Quiz Game!")
 
     wanna_play=input("Do you want to play? ")
-    if wanna_play.lower()=='yes':
+    if wanna_play.lower().strip()=='yes':
         print("Good luck! You'll get 5 questions and 1 point for every correct answer")
     else:
         quit()
@@ -11,7 +11,7 @@ def quiz_game():
     score=0
 
     answer1=input("What is the capital city of Nepal? ")
-    if answer1.lower()=='kathmandu': 
+    if answer1.lower().strip()=='kathmandu': 
         print("Correct!")
         score=score+1
     else:
@@ -32,7 +32,7 @@ def quiz_game():
         print("Incorrect! The correct answer is 5")
 
     answer4=input("What is the full form of CPU? ")
-    if answer4.lower()=='central processing unit': 
+    if answer4.lower().strip()=='central processing unit': 
         print("Correct!")
         score=score+1
     else:
