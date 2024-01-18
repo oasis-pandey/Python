@@ -42,7 +42,7 @@ while True:
     print(" The scores are as follows: ")
     print("USER SCORE: "+str(user_score))
     print("COMPUTER SCORE: "+ str(computer_score))
-    print(" ")
+    print(" ") 
         
 
     
