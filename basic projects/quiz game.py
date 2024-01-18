@@ -44,7 +44,7 @@ def quiz_game():
         score=score+1
     else:
         print("Incorrect! The correct answer is 206")
-    print("Congratulations! you gained "+ str(score)+" points")
+    print("You gained "+ str(score)+" points")
 
 quiz_game()
 
@@ -53,8 +53,4 @@ if play_again.lower()=='yes':
     quiz_game()
 else:
     quit()
-
-
-    
-quiz_game()
 
