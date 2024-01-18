@@ -6,13 +6,11 @@ if number.isdigit():
     number=int(number)
 else:
     print("Please enter a number.")
-    quit()
-
     
+
 random_number=random.randint(0, number)
  
     
-
 while True:
     user_guess=(input("Make a guess! "))
     guesses+=1
