@@ -45,7 +45,14 @@ for player_index in range(int(players)):
             break
 x=player_scores.index(max(player_scores))
 x=x+1
-print("PLAYER"+str(x)+" WON with a total score of: "+str(score))
+print("HERE ARE THE SCORES:")
+for index, value in enumerate(player_scores):
+    print("Player", index+1, ": ", value)
+
+print("\nPLAYER"+str(x)+" won with a total score of: "+str(score))
+
+
+
 
 
         
