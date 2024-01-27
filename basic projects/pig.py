@@ -49,7 +49,7 @@ print("HERE ARE THE SCORES:")
 for index, value in enumerate(player_scores):
     print("Player", index+1, ": ", value)
 
-print("\nPLAYER"+str(x)+" won with a total score of: "+str(score))
+print("\nPLAYER"+str(x)+" won with a total score of: "+str(player_scores[x-1])+'\n')
 
 
 
