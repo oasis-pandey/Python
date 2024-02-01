@@ -1,26 +1,22 @@
 import pygame
+pygame.init()
 
-pygame.init() #initializing pygame module
+white=(255, 255, 255)
+game_window=pygame.display.set_mode((900,600))
+pygame.display.set_caption("Snake Game")
 
-game_window=pygame.display.set_mode((900, 600)) #creating a game window
-pygame.display.set_caption("My First Game") #title for the window
-game_window.fill((255, 255, 255))
-pygame.display.update()
+exit_game=False
 
-#game specific variables
-game_over=False
-game_exit=False
+while exit_game==False:
 
-while game_exit==False:  
+    game_window.fill(white)
+    pygame.display.update()
+
     for event in pygame.event.get():
         if event.type==pygame.QUIT:
-            game_exit=True
+            exit_game=True
+            
         if event.type==pygame.KEYDOWN:
             if event.key==pygame.K_RIGHT:
-                print("You pressed right arrow key!")
+                print("You pressed right key!")
 
-pygame.quit()
-quit()
-
-
-    
