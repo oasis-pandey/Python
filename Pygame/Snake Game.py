@@ -13,8 +13,8 @@ pygame.display.set_caption("Snake Game!")
 black=(0,0,0)
 white=(255,255,255)
 red=(255,0,0)
-snake_x=20
-snake_y=20
+snake_x=50
+snake_y=50
 snake_size=20
 quit_game=False
 velocity_x=0
@@ -37,9 +37,9 @@ while quit_game==False:
         if event.type==pygame.QUIT:
                 quit_game=True
 
-        if event.type==pygame.KEYDOWN:
+        if event.type==pygame.KEYDOWN:      
             velocity_x=0
-            velocity_y=0
+            velocity_y=0                  
             if event.key==pygame.K_LEFT:
                 velocity_x-=8
                 velocity_y=0
@@ -49,10 +49,10 @@ while quit_game==False:
             elif event.key==pygame.K_UP:
                 velocity_y-=8
                 velocity_x=0
-            elif event.key==pygame.K_DOWN:
+            elif event.key==pygame.K_DOWN: 
                 velocity_y+=8
                 velocity_x=0
-    
+                   
     if abs(snake_x-food_x)<10 and abs(snake_y-food_y)<8:
         score+=10
         food_x=random.randint(10,width/2)
