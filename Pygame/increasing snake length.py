@@ -119,8 +119,8 @@ def gameloop():
             #Condition if snake eats the food:
             if abs(snake_x-food_x)<10 and abs(snake_y-food_y)<8:
                 score+=10
-                food_x=random.randint(10,height/2)
-                food_y=random.randint(10,length/2)
+                food_x=random.randint(10, 300)
+                food_y=random.randint(10, 450)
                 snake_length+=5
 
                 if score>int(highscore):
