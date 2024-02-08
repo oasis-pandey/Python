@@ -24,7 +24,9 @@ def generate_food(game_window, color,x, y, food_size):
 #FPS for the game
 clock=pygame.time.Clock()
 fps=30
-
+highscore=0
+with open("highscore.txt","w")as f:
+    f.write(str(highscore))
 def gameloop():
     #GAME VARIABLES
     black=(0,0,0)
@@ -39,14 +41,15 @@ def gameloop():
     velocity_y=0
     score=0
     snake_length=1
-    highscore=0
-
+    
     #SNK_LIST is empty , but "head" list will be appended into it everytime ( check line 74)
     snk_list=[]
     #Food 
     food_x=random.randint(20,200)
     food_y=random.randint(20,350)
     while quit_game==False:
+        with open ("highscore.txt","r")as f:
+                highscore=f.read()
         if game_over==True:
             for event in pygame.event.get():
                 if event.type==pygame.QUIT:
@@ -103,7 +106,8 @@ def gameloop():
                     highscore=score
                     with open("highscore.txt", "w")as f:
                         f.write(str(highscore)) 
-        
+
+                
                     
             snake_x+=velocity_x # changing x coordinate of snake 
             snake_y+=velocity_y # changing y coordinate of snake 
