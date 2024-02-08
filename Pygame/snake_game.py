@@ -6,7 +6,6 @@ pygame.mixer.init()
 beep=pygame.mixer.Sound("beep.mp3")
 over=pygame.mixer.Sound("gameover.mp3")
 intro=pygame.mixer.Sound("intro.mp3")
-crash=pygame.mixer.Sound("crash.mp3")
 #GAME WINDOW
 length=900
 height=600
@@ -40,6 +39,7 @@ with open("highscore.txt","w")as f:
 
 def welcome():
     intro.play(loops=-1)
+    intro.set_volume(0.5)
     game_window.fill((188, 245, 224))
     display_text("WELCOME TO SNAKES", (0,0,0), 225, 275)
     display_text("PRESS SPACEBAR TO PLAY",(0,0,0), 200, 325)
@@ -147,15 +147,17 @@ def gameloop():
             plot_snake(game_window, black,snk_list, snake_size) # plots the snake
         pygame.display.update() #updates the display 
         clock.tick(fps) # implementing the clock feature
-        if snake_x<0 or snake_x>length or snake_y<0 or snake_y>height and not game_over:
-            over.play()
-            game_over=True
-        if head in snk_list[0:-1] and  not game_over:
-            crash.play() 
-            game_over=True
-        
-            
+        if (snake_x < 0 or snake_x > length or
+                snake_y < 0 or snake_y > height) and not game_over:
+                over.play()
+                over.set_volume(1.5)
+                game_over = True
 
+        if head in snk_list[:-1] and not game_over:
+                over.play()
+                over.set_volume(1.5)
+                game_over = True    
+            
 welcome()
 
 
