@@ -1,7 +1,12 @@
 import pygame
 import random
 pygame.init()
+pygame.mixer.init()
 
+beep=pygame.mixer.Sound("beep.mp3")
+over=pygame.mixer.Sound("gameover.mp3")
+intro=pygame.mixer.Sound("intro.mp3")
+crash=pygame.mixer.Sound("crash.mp3")
 #GAME WINDOW
 length=900
 height=600
@@ -34,6 +39,7 @@ with open("highscore.txt","w")as f:
     f.write(str(highscore))
 
 def welcome():
+    intro.play(loops=-1)
     game_window.fill((188, 245, 224))
     display_text("WELCOME TO SNAKES", (0,0,0), 225, 275)
     display_text("PRESS SPACEBAR TO PLAY",(0,0,0), 200, 325)
@@ -49,7 +55,7 @@ def welcome():
         pygame.display.update()
         clock.tick(60)
 
-def gameloop():
+def gameloop():   
     #GAME VARIABLES
     black=(0,0,0)
     white=(255,255,255)
@@ -118,6 +124,7 @@ def gameloop():
 
             #Condition if snake eats the food:
             if abs(snake_x-food_x)<10 and abs(snake_y-food_y)<8:
+                beep.play()
                 score+=10
                 food_x=random.randint(10, 300)
                 food_y=random.randint(10, 450)
@@ -140,10 +147,14 @@ def gameloop():
             plot_snake(game_window, black,snk_list, snake_size) # plots the snake
         pygame.display.update() #updates the display 
         clock.tick(fps) # implementing the clock feature
-        if snake_x<0 or snake_x>length or snake_y<0 or snake_y>height:
+        if snake_x<0 or snake_x>length or snake_y<0 or snake_y>height and not game_over:
+            over.play()
             game_over=True
-        if head in snk_list[0:-1]:
+        if head in snk_list[0:-1] and  not game_over:
+            crash.play() 
             game_over=True
+        
+            
 
 welcome()
 
