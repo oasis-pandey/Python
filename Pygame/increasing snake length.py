@@ -21,12 +21,34 @@ def plot_snake(game_window, color,snk_list,snake_size):
 def generate_food(game_window, color,x, y, food_size):
     pygame.draw.rect(game_window, color, [x, y, food_size, food_size])
 
+def display_text(text, color,x,y ):
+    font=pygame.font.SysFont(None, 55)
+    text=font.render(text, True,color)
+    game_window.blit(text,(x,y))
+
 #FPS for the game
 clock=pygame.time.Clock()
 fps=30
 highscore=0
 with open("highscore.txt","w")as f:
     f.write(str(highscore))
+
+def welcome():
+    game_window.fill((188, 245, 224))
+    display_text("WELCOME TO SNAKES", (0,0,0), 225, 275)
+    display_text("PRESS SPACEBAR TO PLAY",(0,0,0), 200, 325)
+    quit_game=False
+    while quit_game==False:
+        for event in pygame.event.get():
+            if event.type==pygame.QUIT:
+                quit_game=True
+            if event.type==pygame.KEYDOWN:
+                if event.key==pygame.K_SPACE:
+                    gameloop()
+                
+        pygame.display.update()
+        clock.tick(60)
+
 def gameloop():
     #GAME VARIABLES
     black=(0,0,0)
@@ -56,7 +78,7 @@ def gameloop():
                     quit_game=True
                 if event.type==pygame.KEYDOWN:
                     if event.key==pygame.K_RETURN:
-                        gameloop()         
+                        welcome()        
             game_window.fill(white)
             text=pygame.font.SysFont(None,56)
             font=text.render("Game Over! Press Enter to continue", True, red)
@@ -123,8 +145,8 @@ def gameloop():
         if head in snk_list[0:-1]:
             game_over=True
 
-    
-gameloop()
+welcome()
+
 
     
   
