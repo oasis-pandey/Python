@@ -8,9 +8,10 @@ height=600
 game_window=pygame.display.set_mode((length, height))
 pygame.display.set_caption("Snake Game!")
 
-def display_score(score,color,x,y):
+
+def display_score(score,color,x,y,content):
     font=pygame.font.SysFont(None, 55)
-    text=font.render("Score: "+ str(score), True, color)
+    text=font.render(content+ str(score), True, color)
     game_window.blit(text,(x,y))
 
 def plot_snake(game_window, color,snk_list,snake_size):
@@ -38,12 +39,13 @@ def gameloop():
     velocity_y=0
     score=0
     snake_length=1
+    highscore=0
 
     #SNK_LIST is empty , but "head" list will be appended into it everytime ( check line 74)
     snk_list=[]
     #Food 
-    food_x=random.randint(20,height/2)
-    food_y=random.randint(20,length/2)
+    food_x=random.randint(20,200)
+    food_y=random.randint(20,350)
     while quit_game==False:
         if game_over==True:
             for event in pygame.event.get():
@@ -95,12 +97,19 @@ def gameloop():
                 food_x=random.randint(10,height/2)
                 food_y=random.randint(10,length/2)
                 snake_length+=5
-            
+
+                if score>int(highscore):
+                    display_score(highscore, black, 10, 20, "Highscore:")
+                    highscore=score
+                    with open("highscore.txt", "w")as f:
+                        f.write(str(highscore)) 
+        
                     
             snake_x+=velocity_x # changing x coordinate of snake 
             snake_y+=velocity_y # changing y coordinate of snake 
             game_window.fill(white) # fills the entire game window with white color
-            display_score(score, black, 10, 10)  #displays score into game window intead of terminal
+            display_score(score, black, 10, 10, "Score: ")  #displays score into game window intead of terminal
+            display_score(highscore, black,10,50 , "highscore: ")
             generate_food(game_window, red, food_x, food_y, 20) # generates food randomly 
             plot_snake(game_window, black,snk_list, snake_size) # plots the snake
         pygame.display.update() #updates the display 
@@ -109,12 +118,11 @@ def gameloop():
             game_over=True
         if head in snk_list[0:-1]:
             game_over=True
-        
-                     
 
+    
 gameloop()
 
     
- 
+  
 
                 
